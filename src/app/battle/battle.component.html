@@ -1,0 +1,17 @@
+<h1>Liste des battles</h1>
+<ul *ngFor="let battle of battles">
+  <li>
+    <div>
+      <h2>{{ battle.title }}</h2>
+      <p>battle numréro 1</p>
+    </div>
+  </li>
+</ul>
+<div class="row">
+  <button (click)="newBattle()" class="btn waves-effect waves-light s2" name="create">Démarrer une nouvelle battle</button>
+</div>
+<div *ngIf="newDetected">
+  <label>Title : </label><input #battleTitle />
+  <label>Ton nom : </label><input #battleUser />
+  <button (click)="add(battleTitle.value, battleUser.value)">Lancer la battle ! </button>
+</div>
